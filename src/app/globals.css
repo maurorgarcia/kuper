@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+/* ──────────────────────────────────────────────────────────────
+   Design tokens KUPER (Handoff §2). HEX aproximados al logo,
+   NO oficiales: centralizados acá para cambiarlos en un solo lugar.
+   Tailwind v4 los expone como utilidades (bg-teal-700) y como
+   variables CSS (var(--color-teal-700)).
+   ────────────────────────────────────────────────────────────── */
+@theme {
+  --color-teal-900: #15403f;
+  --color-teal-800: #1b5f5d;
+  --color-teal-700: #25807e; /* color de acción */
+  --color-teal-600: #309a98;
+  --color-teal-500: #48b3ab; /* solo anillo de foco; nunca texto */
+  --color-teal-300: #9dd3cc;
+  --color-mint-200: #d3ebe4;
+  --color-mint-100: #e8f4f0;
+  --color-mint-50: #f4faf7;
+  --color-cream-50: #faf8f4;
+  --color-ink-900: #203332;
+  --color-ink-700: #3c504e;
+  --color-ink-500: #5f716f;
+  --color-line-200: #dee9e5;
+  --color-line-300: #c5d8d2;
+  --color-on-inverse-muted: #cfe6e1;
+  --color-footer-divider: rgba(207, 230, 225, 0.22);
+  /* Marcas internas "A validar" (solo con NEXT_PUBLIC_SHOW_PENDING=true) */
+  --color-amber-100: #fbf1dc;
+  --color-amber-800: #77520f;
+  --color-amber-border: #d9b66a;
+  --color-amber-bg: #fffcf5;
+  --color-amber-line: #f1e4c4;
+  --color-amber-check: #b8913f;
+
+  --font-sans: var(--font-outfit), system-ui, sans-serif;
+
+  --ease-kuper: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --shadow-medallion: 0 10px 30px -12px rgba(27, 95, 93, 0.45);
+  --shadow-float: 0 12px 28px -10px rgba(21, 64, 63, 0.55);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    margin: 0;
+    background: #fff;
+    color: var(--color-ink-700);
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a {
+    color: var(--color-teal-700);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  a:hover {
+    color: var(--color-teal-800);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-teal-500);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+}
+
+/* Aparición al hacer scroll (Handoff §5): fundido + 14px, una sola vez.
+   Solo se oculta lo que está fuera de pantalla al cargar (lo hace RevealInit);
+   sin JS todo queda visible. */
+[data-reveal="hidden"] {
+  opacity: 0;
+  transform: translateY(14px);
+}
+[data-reveal="hidden"],
+[data-reveal="shown"] {
+  transition:
+    opacity 0.6s var(--ease-kuper),
+    transform 0.6s var(--ease-kuper);
+}
+[data-reveal="shown"] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
