@@ -29,5 +29,6 @@ export const NAV_ITEMS = [
   { label: "Servicios", href: "/#tratamientos" },
   { label: "Nosotros", href: "/#doctora" },
   { label: "Turnos", href: "/#consulta" },
+  { label: "Reseñas", href: "/#resenas" },
   { label: "Ubicación", href: "/#ubicacion" },
 ] as const;

@@ -5,6 +5,8 @@ import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { RevealInit } from "@/components/RevealInit";
 import { CategoryTabs } from "@/components/CategoryTabs";
 import { FAQAccordion } from "@/components/FAQAccordion";
+import { RatingStrip, Reviews } from "@/components/Reviews";
+import reviewsData from "@/data/reviews.json";
 import { Button, WhatsAppButton } from "@/components/Button";
 import { Icon, type IconName } from "@/components/Icon";
 import { Eyebrow, Heading, PendingChip, PendingNote, Photo, Section } from "@/components/ui";
@@ -30,6 +32,8 @@ const JSON_LD = {
   areaServed: "Nueva Córdoba, Córdoba",
   sameAs: [INSTAGRAM_URL],
 };
+
+const REVIEWS_URL = reviewsData.placeUrl ?? MAPS_DIRECTIONS_URL;
 
 type ContactRow = { icon: IconName; primary: string; href?: string; secondary?: string; pending?: string };
 const CONTACT_ROWS: ContactRow[] = [
@@ -64,19 +68,6 @@ export default function Home() {
                 <WhatsAppButton className="justify-center">Consultar por WhatsApp</WhatsAppButton>
                 <Button href="#tratamientos" variant="secondary" className="justify-center">Ver tratamientos</Button>
               </div>
-              <dl className="mt-3 grid grid-cols-[repeat(auto-fit,minmax(170px,1fr))] gap-x-7 gap-y-[18px] border-t border-line-200 pt-6">
-                <div className="flex flex-col gap-1">
-                  <dt className="text-xs uppercase tracking-[.16em] text-ink-500">Profesional</dt>
-                  <dd className="m-0 flex flex-wrap items-center gap-2 text-[15px] text-ink-900 max-sm:justify-center">
-                    Dra. Eve Kuperstein · MP 37758
-                    <PendingChip>A validar</PendingChip>
-                  </dd>
-                </div>
-                <div className="flex flex-col gap-1">
-                  <dt className="text-xs uppercase tracking-[.16em] text-ink-500">Consultorio</dt>
-                  <dd className="m-0 text-[15px] text-ink-900">Montevideo 45, Nueva Córdoba</dd>
-                </div>
-              </dl>
             </div>
 
             <div data-reveal="" className="relative">
@@ -93,6 +84,9 @@ export default function Home() {
             </div>
           </div>
         </Section>
+
+        {/* 1b · FRANJA DE CONFIANZA (doctora + calificación real de Google) */}
+        <RatingStrip reviewsUrl={REVIEWS_URL} />
 
         {/* 2 · SERVICIOS */}
         <Section id="tratamientos" bg="white">
@@ -192,6 +186,9 @@ export default function Home() {
           </div>
           <PendingNote className="mt-4 !bg-transparent !p-0">Usar solo fotos propias del consultorio, sin pacientes identificables.</PendingNote>
         </Section>
+
+        {/* 5b · RESEÑAS DE GOOGLE (datos reales vía Apify; se oculta si no hay reseñas) */}
+        <Reviews reviewsUrl={REVIEWS_URL} />
 
         {/* 6 · PREGUNTAS FRECUENTES */}
         <Section id="preguntas" bg="white">

@@ -12,6 +12,11 @@ Variables (ver `.env.example`): `NEXT_PUBLIC_SITE_URL` (dominio final), `NEXT_PU
 
 - Tokens: `src/app/globals.css` (`@theme`). Contacto/flags: `src/lib/site.ts`. Textos: `src/lib/content.ts`.
 
+## Reseñas de Google (Apify)
+1. Crear `.env.local` con `APIFY_TOKEN` y `GOOGLE_MAPS_PLACE_URL` (URL del perfil de la clínica en Google Maps).
+2. `npm run reviews` → descarga con el actor `compass/google-maps-reviews-scraper` y guarda `src/data/reviews.json` (≥4★, con texto, las 9 más recientes).
+3. Commitear el JSON. La sección "Reseñas" aparece sola cuando hay datos y se oculta si está vacío. Re-ejecutar para refrescar.
+
 ## Pendiente / mockup
 - **Fotos (11 encuadres)**: hoy placeholders (`Photo` sin `src`). Pasar `src` con imágenes autorizadas (WebP/AVIF; hero con `priority`).
 - Logo SVG y HEX oficiales (los actuales son aproximados).
