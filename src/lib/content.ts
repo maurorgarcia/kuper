@@ -5,7 +5,7 @@ export type Category = {
   label: string;
   photoLabel: string; // texto del placeholder / encuadre requerido
   photoAlt: string;
-  photoSrc?: string; // TODO(fotos): reemplazar mock por foto real
+  photoSrc?: string; // TODO(fotos): imágenes de mockup; reemplazar por fotos reales de la clínica
   caption: string;
   items: Treatment[];
 };
@@ -14,8 +14,8 @@ export const CATEGORIES: Category[] = [
   {
     label: "Facial y piel",
     photoLabel: "Foto real: tratamiento facial en cabina",
-    photoAlt: "Cabina de tratamientos faciales de KUPER",
-    photoSrc: "/mock/tratamiento-0.svg",
+    photoAlt: "Cabina de tratamiento facial con vapor y productos de cuidado de piel",
+    photoSrc: "/images/tratamiento-0.jpg",
     caption: "Cuidado de la piel con aparatología y protocolos por etapas.",
     items: [
       { name: "Limpieza facial profunda", description: "Higiene de la piel por etapas, adaptada a cada tipo de piel." },
@@ -29,8 +29,8 @@ export const CATEGORIES: Category[] = [
   {
     label: "Inyectables",
     photoLabel: "Foto real: consulta de armonización (sin paciente identificable)",
-    photoAlt: "Consultorio preparado para tratamientos inyectables",
-    photoSrc: "/mock/tratamiento-1.svg",
+    photoAlt: "Mesa preparada con material estéril para tratamientos inyectables",
+    photoSrc: "/images/tratamiento-1.jpg",
     caption: "Procedimientos médicos con indicación individual.",
     items: [
       {
@@ -50,8 +50,8 @@ export const CATEGORIES: Category[] = [
   {
     label: "Plasma / PRP",
     photoLabel: "Foto real: equipamiento para plasma",
-    photoAlt: "Equipamiento para tratamientos con plasma",
-    photoSrc: "/mock/tratamiento-2.svg",
+    photoAlt: "Centrífuga y tubos para tratamientos con plasma",
+    photoSrc: "/images/tratamiento-2.jpg",
     caption: "Plasma rico en plaquetas obtenido de una muestra de sangre propia.",
     items: [
       { name: "PRP facial", description: "Aplicación de plasma rico en plaquetas en el rostro." },
@@ -61,8 +61,8 @@ export const CATEGORIES: Category[] = [
   {
     label: "Corporal",
     photoLabel: "Foto real: aparatología corporal",
-    photoAlt: "Aparatología para tratamientos corporales",
-    photoSrc: "/mock/tratamiento-3.svg",
+    photoAlt: "Aparatología para tratamientos corporales en una sala luminosa",
+    photoSrc: "/images/tratamiento-3.jpg",
     caption: "Aparatología corporal con evaluación previa.",
     items: [
       { name: "HIFU", description: "Ultrasonido focalizado para rostro, papada y zonas corporales." },
@@ -73,8 +73,8 @@ export const CATEGORIES: Category[] = [
   {
     label: "Láser",
     photoLabel: "Foto real: equipo de láser del consultorio",
-    photoAlt: "Equipo de láser del consultorio",
-    photoSrc: "/mock/tratamiento-4.svg",
+    photoAlt: "Equipo de láser en una cabina de tratamiento",
+    photoSrc: "/images/tratamiento-4.jpg",
     caption: "Tecnología láser para depilación y tatuajes.",
     items: [
       { name: "Depilación definitiva médica", description: "Depilación láser para mujeres y hombres." },
@@ -114,10 +114,10 @@ export const FAQ = [
 ];
 
 export const GALLERY = [
-  { label: "Foto real: sala de tratamiento", alt: "Sala de tratamiento de KUPER", src: "/mock/consultorio-1.svg" },
-  { label: "Foto real: recepción / ingreso", alt: "Recepción del consultorio KUPER", src: "/mock/consultorio-2.svg" },
-  { label: "Foto real: detalle de la aparatología", alt: "Detalle de la aparatología del consultorio", src: "/mock/consultorio-3.svg" },
-  { label: "Foto real: detalle del espacio (productos, luz natural)", alt: "Detalle del espacio con luz natural", src: "/mock/consultorio-4.svg" },
+  { label: "Foto real: sala de tratamiento", alt: "Sala de tratamiento con camilla y luz natural", src: "/images/consultorio-1.jpg" },
+  { label: "Foto real: recepción / ingreso", alt: "Recepción con mostrador de madera y sillones claros", src: "/images/consultorio-2.jpg" },
+  { label: "Foto real: detalle de la aparatología", alt: "Detalle de aparatología sobre una repisa", src: "/images/consultorio-3.jpg" },
+  { label: "Foto real: detalle del espacio (productos, luz natural)", alt: "Estante con productos de cuidado de la piel junto a una ventana", src: "/images/consultorio-4.jpg" },
 ];
 
 /** Bloque interno "Antes de publicar" (solo con SHOW_PENDING). */

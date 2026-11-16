@@ -82,9 +82,9 @@ export default function Home() {
             <div data-reveal="" className="relative">
               <Photo
                 priority
-                src="/mock/hero.svg"
+                src="/images/hero.jpg"
                 label="Foto real: la doctora en el consultorio (retrato autorizado)"
-                alt="Dra. Eve Kuperstein en el consultorio de KUPER, Nueva Córdoba"
+                alt="Sala de tratamiento luminosa con camilla blanca y ventana"
                 className="aspect-[4/5] max-h-[680px] w-full rounded-[28px_28px_28px_200px]"
               />
               <div className="pointer-events-none absolute right-[clamp(12px,3vw,-24px)] top-[clamp(16px,4vw,40px)] flex aspect-square w-[clamp(84px,10vw,120px)] items-center justify-center rounded-full bg-teal-700 shadow-medallion">
@@ -120,9 +120,9 @@ export default function Home() {
           <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,400px),1fr))] items-center gap-[clamp(40px,7vw,104px)]">
             <div data-reveal="" className="mx-auto w-full max-w-[500px]">
               <Photo
-                src="/mock/doctora.svg"
+                src="/images/doctora.jpg"
                 label="Foto real: retrato profesional de la Dra. Eve Kuperstein"
-                alt="Retrato de la Dra. Eve Kuperstein"
+                alt="Escritorio de consulta con luz natural"
                 className="aspect-[4/5] rounded-[999px_999px_28px_28px] border border-mint-200"
                 sizes="(min-width:1000px) 40vw, 90vw"
               />
